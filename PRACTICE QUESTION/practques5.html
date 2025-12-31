@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f59ab7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 25px;
+      width: 320px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #084298;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Positive / Negative / Zero</h2>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="checkNumber()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkNumber() {
+      let n = document.getElementById("num").value;
+      let result = document.getElementById("result");
+
+      let output = (n > 0) 
+        ? "Positive Number" 
+        : (n < 0) 
+          ? "Negative Number" 
+          : "Zero";
+
+      result.innerHTML = output;
+      result.style.color =
+        (n > 0) ? "green" :
+        (n < 0) ? "red" :
+        "blue";
+    }
+  </script>
+
+</body>
+</html>

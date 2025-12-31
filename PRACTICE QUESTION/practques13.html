@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Three Numbers</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e7e34;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Sort Three Numbers</h2>
+
+    <input type="number" id="n1" placeholder="Enter first number">
+    <input type="number" id="n2" placeholder="Enter second number">
+    <input type="number" id="n3" placeholder="Enter third number">
+
+    <button onclick="sortNumbers()">Sort</button>
+</div>
+
+<script>
+    function sortNumbers() {
+        let a = Number(document.getElementById("n1").value);
+        let b = Number(document.getElementById("n2").value);
+        let c = Number(document.getElementById("n3").value);
+
+        let x, y, z;
+
+        if (a <= b && a <= c) {
+            x = a;
+            if (b <= c) {
+                y = b;
+                z = c;
+            } else {
+                y = c;
+                z = b;
+            }
+        } else if (b <= a && b <= c) {
+            x = b;
+            if (a <= c) {
+                y = a;
+                z = c;
+            } else {
+                y = c;
+                z = a;
+            }
+        } else {
+            x = c;
+            if (a <= b) {
+                y = a;
+                z = b;
+            } else {
+                y = b;
+                z = a;
+            }
+        }
+
+        alert("Sorted numbers: " + x + ", " + y + ", " + z);
+    }
+</script>
+
+</body>
+</html>

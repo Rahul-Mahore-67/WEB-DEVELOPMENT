@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ticket Price Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #47484a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 25px;
+      width: 320px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #198754;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #146c43;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Ticket Price Calculator</h2>
+    <input type="number" id="age" placeholder="Enter your age">
+    <button onclick="calculatePrice()">Check Price</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculatePrice() {
+      let age = document.getElementById("age").value;
+      let result = document.getElementById("result");
+      let price;
+
+      if (age === "" || age < 0) {
+        result.innerHTML = "Please enter a valid age";
+        result.style.color = "red";
+      } else if (age < 12) {
+        price = 5;
+      } else if (age < 18) {
+        price = 10;
+      } else if (age < 60) {
+        price = 20;
+      } else {
+        price = 15;
+      }
+
+      if (price !== undefined) {
+        result.innerHTML = "Ticket Price: ₹" + price;
+        result.style.color = "green";
+      }
+    }
+  </script>
+
+</body>
+</html>

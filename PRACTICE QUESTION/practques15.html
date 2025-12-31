@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; padding: 30px; text-align: center; }
+        .list-container { border: 1px solid #ddd; display: inline-block; padding: 20px; border-radius: 8px; width: 250px; background: #fafafa; }
+        ul { list-style-type: none; padding: 0; text-align: left; }
+        li { background: #fff; border: 1px solid #eee; padding: 8px; margin-bottom: 5px; }
+        button { background: #3f51b5; color: white; border: none; padding: 8px 16px; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="list-container">
+    <h3>Fruit List (Array)</h3>
+    <button onclick="showFruits()">Show Fruits</button>
+    <ul id="fruitList"></ul>
+</div>
+
+<script>
+    function showFruits() {
+        let fruits = ["Apple", "Banana", "Cherry", "Mango"];
+        let list = document.getElementById("fruitList");
+        list.innerHTML = ""; // Clear
+        
+        for (let fruit of fruits) {
+            list.innerHTML += `<li>${fruit}</li>`;
+        }
+    }
+</script>
+
+</body>
+</html>

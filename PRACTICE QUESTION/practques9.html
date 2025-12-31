@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time-based Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    #time {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="greeting">Hello!</h1>
+    <div id="time"></div>
+  </div>
+
+  <script>
+    function greetUser() {
+      let now = new Date();
+      let hours = now.getHours();
+      let greeting;
+
+      if (hours < 12) {
+        greeting = "Good Morning!";
+      } else if (hours < 18) {
+        greeting = "Good Afternoon!";
+      } else {
+        greeting = "Good Evening!";
+      }
+
+      document.getElementById("greeting").innerHTML = greeting;
+      document.getElementById("time").innerHTML = "Current time: " + now.toLocaleTimeString();
+    }
+
+    greetUser();
+    setInterval(greetUser, 1000); // updates time every second
+  </script>
+
+</body>
+</html>

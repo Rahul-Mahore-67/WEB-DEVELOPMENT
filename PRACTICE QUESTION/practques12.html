@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign of Product</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c98484;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Sign of Product</h2>
+
+    <input type="number" id="num1" value="3">
+    <input type="number" id="num2" value="-7">
+    <input type="number" id="num3" value="2">
+
+    <button onclick="findSign()">Check Sign</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function findSign() {
+        let a = document.getElementById("num1").value;
+        let b = document.getElementById("num2").value;
+        let c = document.getElementById("num3").value;
+
+        let product = a * b * c;
+
+        if (product > 0) {
+            document.getElementById("result").innerHTML = "The sign is +";
+        } else if (product < 0) {
+            document.getElementById("result").innerHTML = "The sign is -";
+        } else {
+            document.getElementById("result").innerHTML = "The product is 0";
+        }
+    }
+</script>
+
+</body>
+</html>

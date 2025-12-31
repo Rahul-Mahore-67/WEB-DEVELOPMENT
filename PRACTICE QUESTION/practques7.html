@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leap Year Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #101720;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #20c997;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #198754;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Leap Year Checker</h2>
+    <input type="number" id="year" placeholder="Enter year">
+    <button onclick="checkLeapYear()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkLeapYear() {
+      let year = document.getElementById("year").value;
+      let result = document.getElementById("result");
+
+      if (year === "" || year <= 0) {
+        result.innerHTML = "Please enter a valid year";
+        result.style.color = "red";
+      } else if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        result.innerHTML = year + " is a Leap Year";
+        result.style.color = "green";
+      } else {
+        result.innerHTML = year + " is Not a Leap Year";
+        result.style.color = "blue";
+      }
+    }
+  </script>
+
+</body>
+</html>

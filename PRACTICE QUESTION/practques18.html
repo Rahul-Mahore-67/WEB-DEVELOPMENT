@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; padding: 40px; background: #e89ba4; }
+        .fact-box { background: white; padding: 25px; border-left: 5px solid #502047; width: 300px; margin: 0 auto; }
+        input { padding: 8px; border: 1px solid #ccc; width: 60%; }
+        button { padding: 8px 15px; background: #865993; color: white; border: none; cursor: pointer; }
+        #fact-res { margin-top: 15px; font-size: 1.1em; color: #7d2e33; }
+    </style>
+</head>
+<body>
+
+<div class="fact-box">
+    <h3>Factorial Calculator</h3>
+    <input type="number" id="numInput" placeholder="Enter N">
+    <button onclick="getFactorial()">Calc</button>
+    <div id="fact-res"></div>
+</div>
+
+<script>
+    function getFactorial() {
+        let n = parseInt(document.getElementById("numInput").value);
+        let fact = 1;
+        for (let i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        document.getElementById("fact-res").innerText = n + "! = " + fact;
+    }
+</script>
+
+</body>
+</html>

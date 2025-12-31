@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #c1eea5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e7e34;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Grade Calculator</h2>
+    <input type="number" id="marks" placeholder="Enter marks (0-100)">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateGrade() {
+      let marks = document.getElementById("marks").value;
+      let result = document.getElementById("result");
+
+      if (marks === "" || marks < 0 || marks > 100) {
+        result.innerHTML = "Please enter valid marks (0-100)";
+        result.style.color = "red";
+      } else if (marks >= 90) {
+        result.innerHTML = "Grade: A";
+        result.style.color = "green";
+      } else if (marks >= 75) {
+        result.innerHTML = "Grade: B";
+        result.style.color = "blue";
+      } else if (marks >= 60) {
+        result.innerHTML = "Grade: C";
+        result.style.color = "orange";
+      } else if (marks >= 40) {
+        result.innerHTML = "Grade: D";
+        result.style.color = "brown";
+      } else {
+        result.innerHTML = "Grade: F (Fail)";
+        result.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
