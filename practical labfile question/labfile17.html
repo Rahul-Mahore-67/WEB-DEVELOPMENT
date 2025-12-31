@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listeners</title>
+</head>
+<body>
+
+<button id="btn">Click Me</button>
+<input type="text" id="box" placeholder="Press any key">
+
+<script>
+// Mouse event
+document.getElementById("btn").addEventListener("click", function () {
+    alert("Button Clicked!");
+});
+
+// Keyboard event
+document.getElementById("box").addEventListener("keydown", function (event) {
+    console.log("Key Pressed:", event.key);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Demonstration</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 5px;
+            padding: 5px;
+        }
+        .highlight {
+            background-color: yellow;
+            color: black;
+        }
+        #main-title {
+            color: blue;
+            border: 2px solid blue;
+            padding: 10px;
+            text-align: center;
+        }
+        div p {
+            font-style: italic;
+            color: gray;
+        }
+        h2, h3, strong {
+            border-bottom: 1px solid red;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Demonstration of CSS Selectors</h1>
+    <h2>Universal, Class, and ID Selectors in Action</h2>
+    <p class="highlight">This paragraph has a yellow background because of the **class selector** (`.highlight`).</p>
+    <p>This paragraph does not have a class, so it is unaffected by the class selector.</p>
+    <div class="container">
+        <h3>Descendant and Group Selectors in Action</h3>
+        <p>This paragraph is inside a `&lt;div&gt;` and is styled with the **descendant selector** (`div p`), making it italic and gray.</p>
+        <p class="highlight">This paragraph is also inside a `&lt;div&gt;` and has a class. It is styled by both the descendant selector and the class selector (which is more specific, hence the yellow background and italic text).</p>
+        <strong>This text uses the group selector</strong>
+    </div>
+</body>
+</html>

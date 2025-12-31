@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Element</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<p id="para">This paragraph can be shown or hidden</p>
+
+<button onclick="toggleVisibility()">Show / Hide</button>
+<button onclick="toggleClass()">Toggle Class</button>
+
+<script>
+function toggleVisibility() {
+    document.getElementById("para").classList.toggle("hidden");
+}
+
+function toggleClass() {
+    document.getElementById("para").classList.toggle("highlight");
+}
+</script>
+
+</body>
+</html>
