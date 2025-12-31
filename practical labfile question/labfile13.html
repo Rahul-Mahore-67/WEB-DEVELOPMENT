@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        function greet(name) {
+  console.log("Hello " + name);
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+greet("Rahul");
+console.log(add(5, 3));
+
+var x = 10;
+let y = 20;
+const z = 30;
+
+console.log(x, y, z);
+
+function testScope() {
+  var x = 1;
+  let y = 2;
+  const z = 3;
+  console.log("Inside function:", x, y, z);
+}
+
+testScope();
+
+console.log("Outside function:", x, y, z);
+    </script>
+    
+</body>
+</html>

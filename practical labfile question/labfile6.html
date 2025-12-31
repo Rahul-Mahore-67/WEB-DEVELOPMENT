@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internal CSS Example</title>
+    <style>
+        h1 {
+            color: green;
+            background-color: yellow;
+            text-align: center;
+        }
+        p {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="csslevel35.1.css">
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p style="color: blue; font-size: 16px;">This text has inline styles.Characteristics and Use Cases:
+High Specificity: Inline styles have the highest specificity among CSS styling methods, overriding styles defined in external stylesheets or internal style tags.
+Limited Reusability: Styles defined inline are specific to a single element and are not easily reusable across multiple elements.
+Quick Application: Ideal for applying unique, one-off styles to individual elements without affecting global styles.
+Testing and Debugging: Useful for quickly testing or previewing style changes during development.
+Email Templates: Often used in email templates to ensure consistent styling across various email clients, which may have limited support for external or internal stylesheets.
+Drawbacks:
+Maintenance Challenges: Modifying styles requires editing each individual element, which can be cumbersome for large projects or frequent changes.
+Code Clutter: Mixing CSS directly within HTML can make the HTML code less readable and harder to maintain.
+Against Best Practices: Generally, it is advised to separate content (HTML) from presentation (CSS) for better organization and maintainability. External or internal stylesheets are preferred for most styling needs.</p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+
+<h2>Calculator</h2>
+
+<input id="a" type="number" placeholder="Enter first number">
+<input id="b" type="number" placeholder="Enter second number">
+
+<br><br>
+
+<button onclick="add()">Add</button>
+<button onclick="sub()">Subtract</button>
+<button onclick="mul()">Multiply</button>
+<button onclick="div()">Divide</button>
+
+<p id="result"></p>
+
+<script>
+  function add() {
+    let x = Number(document.getElementById("a").value)
+    let y = Number(document.getElementById("b").value)
+    document.getElementById("result").innerText = x + y
+  }
+
+  function sub() {
+    let x = Number(document.getElementById("a").value)
+    let y = Number(document.getElementById("b").value)
+    document.getElementById("result").innerText = x - y
+  }
+
+  function mul() {
+    let x = Number(document.getElementById("a").value)
+    let y = Number(document.getElementById("b").value)
+    document.getElementById("result").innerText = x * y
+  }
+
+  function div() {
+    let x = Number(document.getElementById("a").value)
+    let y = Number(document.getElementById("b").value)
+    if (y === 0) {
+      document.getElementById("result").innerText = "Cannot divide by zero"
+    } else {
+      document.getElementById("result").innerText = x / y
+    }
+  }
+</script>
+
+</body>
+</html>
