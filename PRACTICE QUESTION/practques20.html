@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; background: #b0d51c; }
+        .arm-card { background: white; padding: 25px; border-radius: 10px; border: 2px solid #ffc107; text-align: center; }
+        input { padding: 8px; margin-bottom: 10px; }
+        button { background: #ffc107; border: none; padding: 8px 15px; cursor: pointer; font-weight: bold; color: #333; }
+        #arm-res { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="arm-card">
+    <h3>Armstrong Checker</h3>
+    <input type="number" id="armInput" placeholder="Enter 3-digit number">
+    <button onclick="checkArmstrong()">Verify</button>
+    <div id="arm-res"></div>
+</div>
+
+<script>
+    function checkArmstrong() {
+        let num = parseInt(document.getElementById("armInput").value);
+        let sum = 0;
+        let temp = num;
+        
+        while (temp > 0) {
+            let digit = temp % 10;
+            sum += digit ** 3;
+            temp = Math.floor(temp / 10);
+        }
+        
+        if (sum === num) {
+            document.getElementById("arm-res").innerText = num + " is an Armstrong Number";
+            document.getElementById("arm-res").style.color = "green";
+        } else {
+            document.getElementById("arm-res").innerText = num + " is NOT.";
+            document.getElementById("arm-res").style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'Consolas', monospace; background: #2d2d2d; color: #ccc; padding: 30px; }
+        .obj-view { border: 1px solid #555; padding: 20px; max-width: 300px; margin: 0 auto; background: #333; }
+        .prop { color: #f07178; }
+        .val { color: #b1b2ae; }
+        button { background: #82aaff; color: #2d2d2d; border: none; padding: 8px 16px; cursor: pointer; width: 100%; margin-bottom: 10px; font-weight: bold;}
+    </style>
+</head>
+<body>
+
+<div class="obj-view">
+    <button onclick="showObj()">Iterate Object</button>
+    <div id="obj-output"></div>
+</div>
+
+<script>
+    function showObj() {
+        let person = { name: "harry", age: 29, job: "datascientist", city: "america" };
+        let out = document.getElementById("obj-output");
+        out.innerHTML = "{<br>";
+        
+        for (let key in person) {
+            out.innerHTML += `&nbsp;&nbsp;<span class="prop">${key}</span>: <span class="val">"${person[key]}"</span>,<br>`;
+        }
+        
+        out.innerHTML += "}";
+    }
+</script>
+
+</body>
+</html>
