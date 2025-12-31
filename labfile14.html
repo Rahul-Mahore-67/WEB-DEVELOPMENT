@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form onsubmit="return check()">
+  <input id="name" type="text" placeholder="Enter name" oninput="msg.innerText=''">
+  <br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+  function check() {
+    let n = document.getElementById("name").value
+
+    if (n === "") {
+      alert("Name cannot be empty")
+      msg.innerText = "Form not submitted"
+      return false
+    }
+
+    alert("Form submitted")
+    msg.innerText = "Success"
+    return true
+  }
+</script>
+
+</body>
+</html>
