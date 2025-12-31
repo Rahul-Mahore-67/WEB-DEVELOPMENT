@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .loop-box { border: 2px solid #333; display: inline-block; padding: 20px; }
+        .num-item { display: inline-block; padding: 5px 10px; background: #4ccbdf; margin: 2px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+<div class="loop-box">
+    <h3>Loop 1 to 10</h3>
+    <button onclick="loopTen()">Start Loop</button>
+    <div id="loop-res" style="margin-top:15px;"></div>
+</div>
+
+<script>
+    function loopTen() {
+        let container = document.getElementById("loop-res");
+        container.innerHTML = ""; // Clear previous
+        for(let i = 1; i <= 10; i++) {
+            container.innerHTML += `<span class="num-item">${i}</span>`;
+        }
+    }
+</script>
+
+</body>
+</html>
